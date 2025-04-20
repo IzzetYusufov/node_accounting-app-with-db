@@ -17,7 +17,7 @@ const remove = async (id) => {
 };
 
 const update = async (id, name) => {
-  return User.update({ name }, { where: { id } });
+  return User.update({ name }, { where: { id }, returning: true });
 };
 
 module.exports = {

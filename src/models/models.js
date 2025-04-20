@@ -12,9 +12,6 @@ Expense.belongsTo(User, {
   foreignKey: 'userId',
 });
 
-User.sync({ force: true });
-Expense.sync({ force: true });
-
 module.exports = {
   models: {
     User,

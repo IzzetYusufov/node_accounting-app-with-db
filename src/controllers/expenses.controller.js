@@ -6,11 +6,11 @@ const getExpenses = async (req, res) => {
   const queries = req.query;
 
   try {
-    const users = await expenseService.getAll(queries);
+    const expenses = await expenseService.getAll(queries);
 
-    return users.length > 0
-      ? res.status(200).send(expensesDto(users))
-      : res.status(200).send(users);
+    return expenses.length > 0
+      ? res.status(200).send(expensesDto(expenses))
+      : res.status(200).send(expenses);
   } catch (error) {
     return res.status(500).send('Server error');
   }

@@ -34,10 +34,10 @@ const getAll = ({ userId, categories, from, to }) => {
     });
   }
 
-  if (categories) {
+  if (categories.length) {
     conditions.push({
       category: {
-        [Op.eq]: categories,
+        [Op.in]: categories,
       },
     });
   }

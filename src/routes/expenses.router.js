@@ -12,8 +12,6 @@ expensesRouter.get('/', getExpenses);
 expensesRouter.post('/', createExpense);
 expensesRouter.get('/:id', getExpense);
 expensesRouter.delete('/:id', removeExpense);
-expensesRouter.delete('/', removeExpense);
 expensesRouter.patch('/:id', updateExpense);
-expensesRouter.patch('/', updateExpense);
 
 module.exports = { expensesRouter };

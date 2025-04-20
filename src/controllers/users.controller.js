@@ -73,10 +73,11 @@ const updateUser = async (req, res) => {
   }
 
   try {
-    const [user] = await userService.update(+id, name);
+    // eslint-disable-next-line no-unused-vars
+    const [_, [user]] = await userService.update(+id, name);
 
     return user
-      ? res.status(200).send(userDto({ id, name }))
+      ? res.status(200).send(userDto(user))
       : res.status(404).send('Not found');
   } catch (error) {
     return res.status(500).send('Server error');
